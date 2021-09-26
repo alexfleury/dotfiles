@@ -1,46 +1,67 @@
+"""Script to install dotfiles of a particular folder (depending on the system)
+to a home folder. It replicates the folder structure and add a dot (".") at the
+beginning of every path.
+"""
+
 import argparse
 import os
+from dataclasses import dataclass, field, InitVar
 
-#parser = argparse.ArgumentParser(description='Process some integers.')
-#parser.add_argument('integers', metavar='N', type=int, nargs='+',
-#                    help='an integer for the accumulator')
-#parser.add_argument('--sum', dest='accumulate', action='store_const',
-#                    const=sum, default=max,
-#                    help='sum the integers (default: find the max)')
-#
-#args = parser.parse_args()
-#print(args.accumulate(args.integers))
 
-system_folder = "arch_linux"
-home_folder = "/home/alexandre/test"
-
-def get_symlink_path(file):
+@dataclass
+class DotFile:
     """Docstring."""
-    split_path = file.split("/")
-    split_path = split_path[1:]
+    rel_path: InitVar[str]
+    system_path: InitVar[str]
+    name: str = field(init=False)
+    abs_path: str = field(init=False)
+    folder: str = field(init=False)
 
-    if len(split_path) > 1:
-        dir_to_create = "."
-        dir_to_create += "/".join(split_path[:-1])
-    else:
-        dir_to_create = None
+    def __post_init__(self, rel_path, system_path):
+        self.abs_path = os.path.abspath(rel_path)
 
-    symlink = "."
-    symlink += "/".join(split_path)
+        path_to_name, self.name = os.path.split(rel_path)
 
-    return symlink, dir_to_create
+        common = os.path.commonpath({path_to_name, system_path})
+        self.folder = path_to_name[len(common)+1:]
 
-dotfiles = list()
-for root, directories, files in os.walk(system_folder):
-    for file in files:
-        dotfiles.append(os.path.join(root, file))
+        if self.folder:
+            self.folder = "." + self.folder
+        else:
+            self.name = "." + self.name
 
-for file in dotfiles:
-    absolute_path = os.path.abspath(file)
-    symlink, dir_to_create = get_symlink_path(file)
-    destination = os.path.join(home_folder, symlink)
+    def create_symbolic_link(self, home_path):
+        symlink_path = os.path.join(home, self.folder, self.name)
 
-    if dir_to_create:
-        dir_to_create = os.path.join(home_folder, dir_to_create)
-        os.makedirs(dir_to_create, exist_ok=True)
-    os.symlink(absolute_path, destination)
+        if self.folder:
+            folder_path = os.path.join(home_path, self.folder)
+            os.makedirs(folder_path, exist_ok=True)
+
+        os.symlink(self.abs_path, symlink_path)
+
+
+def get_dotfiles(directory_path):
+    """Dosctring."""
+
+    list_dotfiles = list()
+    for root, _, files in os.walk(directory_path):
+        for file in files:
+            list_dotfiles += [DotFile(os.path.join(root, file), directory_path)]
+
+    return list_dotfiles
+
+
+# Python option.
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("dotfiles", type=str,
+                    help="Relevant folder (path) where dotfiles are.")
+args = parser.parse_args()
+
+home = "/home/alexandre/test"#os.path.expanduser("~")
+overwrite = True
+dry_run = True
+
+list_dotfiles = get_dotfiles(args.dotfiles)
+
+for dotfile in list_dotfiles:
+    dotfile.create_symbolic_link(home)
