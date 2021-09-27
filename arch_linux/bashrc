@@ -11,13 +11,6 @@
 # Delete doublons in .bash_history
 export HISTCONTROL=ignoreboth:erasedups
 
-# Custom aliases
-alias pyscience='source ~/VirtualEnvs/science/bin/activate'
-alias pyquantum='source ~/VirtualEnvs/quantum/bin/activate'
-alias ll='ls -al'
-alias listpac='pacman -Qqe | grep -v base > ~/packages.txt'
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
 # Colors
 #
 # https://wiki.archlinux.org/index.php/Color_Bash_Prompt
@@ -134,3 +127,7 @@ LESS_TERMCAP_se=$'\E[0m' \
 LESS_TERMCAP_so=$'\E[38;5;246m' \
 LESS_TERMCAP_ue=$'\E[0m' \
 LESS_TERMCAP_us=$'\E[04;38;5;146m'
+
+# Custom aliases
+alias ll="ls -al"
+alias listpac="pacman -Qqe | grep -v base > ~/packages.txt"
