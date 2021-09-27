@@ -23,5 +23,8 @@
     "latex-workshop.view.pdf.viewer": "tab",
     "editor.minimap.enabled": false,
     "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true
+    "files.trimFinalNewlines": true,
+    "editor.rulers": [
+    80
+    ]
 }
