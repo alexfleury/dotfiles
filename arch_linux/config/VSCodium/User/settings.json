@@ -1,0 +1,30 @@
+{
+    "window.zoomLevel": 1,
+    "python.venvPath": "~/VirtualEnvs",
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "workbench.statusBar.visible": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "latex-workshop.latex.autoBuild.run": "never",
+    "editor.wordWrap": "on",
+    "latex-workshop.message.update.show": false,
+    "workbench.colorTheme": "Nord",
+    "terminal.external.linuxExec": "exo-open --launch TerminalEmulator",
+    "terminal.explorerKind": "external",
+    "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.mouseWheelZoom": true,
+    "workbench.iconTheme": "vs-minimal",
+    "terminal.integrated.lineHeight": 1.1,
+    "terminal.integrated.fontFamily": "\"Source Code Pro\"",
+    "editor.renderControlCharacters": false,
+    "cSpell.language": "en,fr",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "editor.minimap.enabled": false,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "editor.rulers": [
+    80
+    ]
+}
