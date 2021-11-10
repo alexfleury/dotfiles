@@ -1,0 +1,2 @@
+#!/bin/sh
+xfce4-panel-profiles load ~/.local/share/xfce4-panel-profiles/docked_close.tar.bz2
