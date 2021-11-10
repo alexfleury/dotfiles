@@ -44,7 +44,10 @@ class DotFile:
 
         # Adding a leading period where necessary.
         if self.folder:
-            self.folder = "." + self.folder
+            # Macos Library folder does not have a leading
+            # period.
+            if not self.folder[:7] == "Library":
+                self.folder = "." + self.folder
         else:
             self.name = "." + self.name
 
