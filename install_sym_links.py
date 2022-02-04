@@ -81,7 +81,7 @@ class DotFile:
                 print(f"OVERWRITE - Symbolic link {symlink_path} pointing to "\
                       f"{self.abs_path}.")
             elif overwrite:
-                archiving_path = os.path.join("overwrited_files", self.folder)
+                archiving_path = os.path.join("overwritten_files", self.folder)
                 os.makedirs(archiving_path, exist_ok=True)
                 os.replace(symlink_path, os.path.join(archiving_path,
                     self.name))
