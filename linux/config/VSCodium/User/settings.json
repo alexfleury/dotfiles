@@ -26,5 +26,6 @@
     "files.trimFinalNewlines": true,
     "editor.rulers": [
     80
-    ]
+    ],
+    "python.pythonPath": "/home/alexandre/VirtualEnvs/quantum/bin/python"
 }
