@@ -16,5 +16,5 @@ ytick.right: True
 ytick.direction: in
 figure.autolayout: True
 errorbar.capsize: 2
-text.usetex: True
+text.usetex: False
 text.latex.preamble: \usepackage[T1]{fontenc} \usepackage{siunitx}
