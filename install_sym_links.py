@@ -127,8 +127,8 @@ parser.add_argument("dotfiles", type=str,
 parser.add_argument('-o', '--output', type=str, default=os.path.expanduser("~"),
     help="Destination folder for symlink dotfiles.")
 parser.add_argument('-f', '--force', action="store_true",
-    help="Overwrite already existing file. A overwrited_files folder will be "\
-         "created with overwrited files in their respective folder structure.")
+    help="Overwrite already existing file. A overwritten_files folder will be "\
+         "created with overwritten files in their respective folder structure.")
 parser.add_argument('-z', '--dryrun', action="store_true",
     help="Dry run, no change will be made.")
 
