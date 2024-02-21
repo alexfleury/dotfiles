@@ -1,0 +1,21 @@
+mol default style cpk
+
+color Name C gray
+color Type C gray
+color Name H white
+color Type H white
+color Name N blue
+color Type N blue
+color Name O red
+color Type O red
+
+color change rgb 2 0.556 0.556 0.556;
+color change rgb 0 0.098 0.098 0.898;
+color change rgb 1 0.989 0.0 0.0;
+
+color Display Background white
+color Display FPS black
+
+axes location off
+
+menu main on
