@@ -1,6 +1,6 @@
 # To use as a global gitignore file, add
 # [core]
-# excludesfile = ~/.gitignore
+# excludesfile = ~/.gitignore_global
 # To the ~/.gitconfig file.
 
 # MacOS junk.
