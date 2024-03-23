@@ -11,10 +11,11 @@ fi
 
 
 # Setting this, so the repo does not need to be given on the commandline.
-export BORG_REPO="$HOME/Backups"
+#export BORG_REPO="$HOME/Backups"
+export BORG_REPO="/Volumes/Lexar/Backups"
 
 #This is the location you want Rclone to send the BORG_REPO to
-export CLOUDDEST="gdrive:/Backups"
+#export CLOUDDEST="gdrive:/Backups"
 
 # Setting this, so you won't be asked for your repository passphrase.
 export BORG_PASSPHRASE=$(<~/.borg_pass)
@@ -69,13 +70,13 @@ prune_exit=$?
 global_exit=$(( backup_exit > prune_exit ? backup_exit : prune_exit ))
 
 # Execute rclone if no errors.
-if [ ${global_exit} -eq 0 ];
-then
-    info "Rclone Borg sync has started..."
-    rclone sync $BORG_REPO $CLOUDDEST -P --stats 1s -v
-    info "Rclone Borg sync completed."
-else
-    info "Backup, Prune and/or Compact finished with an error."
-fi
+#if [ ${global_exit} -eq 0 ];
+#then
+#    info "Rclone Borg sync has started..."
+#    rclone sync $BORG_REPO $CLOUDDEST -P --stats 1s -v
+#    info "Rclone Borg sync completed."
+#else
+#    info "Backup, Prune and/or Compact finished with an error."
+#fi
 
 exit ${global_exit}
