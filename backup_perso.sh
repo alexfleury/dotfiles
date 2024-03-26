@@ -36,16 +36,16 @@ borg create                     \
     --list                      \
     --stats                     \
     --show-rc                   \
-    --compression lzma,9        \
+    --compression lz4           \
     --exclude-caches            \
-    --exclude /mnt/d/SteamLibrary \
-    --exclude /mnt/d/Series/mp4 \
-    --exclude /mnt/d/Films/mp4  \
-    --exclude "/mnt/d/'$RECYCLE.BIN'" \
-    --exclude "/mnt/d/System Volume Information" \
+    --exclude '/mnt/d/SteamLibrary' \
+    --exclude '/mnt/d/Series/mp4' \
+    --exclude '/mnt/d/Films/mp4'  \
+    --exclude '/mnt/d/$RECYCLE.BIN' \
+    --exclude '/mnt/d/System Volume Information' \
                                 \
     ::'{hostname}-{now}'        \
-    /mnt/d
+    '/mnt/d'
 
 backup_exit=$?
 
