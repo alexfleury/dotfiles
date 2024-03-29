@@ -29,23 +29,25 @@ info "Starting backup..."
 # Backup the most important directories into an archive named after
 # the machine this script is currently running on:
 
-borg create                     \
-    --verbose                   \
-    --filter AMEx               \
-    --files-cache=mtime,size    \
-    --list                      \
-    --stats                     \
-    --show-rc                   \
-    --compression lz4           \
-    --exclude-caches            \
-    --exclude '/mnt/d/SteamLibrary' \
-    --exclude '/mnt/d/Series/mp4' \
-    --exclude '/mnt/d/Films/mp4'  \
-    --exclude '/mnt/d/$RECYCLE.BIN' \
-    --exclude '/mnt/d/System Volume Information' \
-                                \
-    ::'{hostname}-{now}'        \
-    '/mnt/d'
+borg create                                      \
+    --verbose                                    \
+    --filter AMEx                                \
+    --files-cache=mtime,size                     \
+    --list                                       \
+    --stats                                      \
+    --show-rc                                    \
+    --compression lz4                            \
+    --exclude-caches                             \
+    --exclude "/mnt/d/SteamLibrary"              \
+    --exclude "/mnt/d/Series/mp4"                \
+    --exclude "/mnt/d/Films/mp4"                 \
+    --exclude "/mnt/d/GDrive"                    \
+    --exclude "/mnt/d/PDrive"                    \
+    --exclude '/mnt/d/$RECYCLE.BIN'              \
+    --exclude "/mnt/d/System Volume Information" \
+                                                 \
+    ::'{hostname}-{now}'                         \
+    "/mnt/d"
 
 backup_exit=$?
 
