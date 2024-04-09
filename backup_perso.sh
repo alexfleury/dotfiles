@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Some helpers and error handling.
+info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
+trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
 
 # Close if borg or rclone is running.
 if pgrep "borg" || pgrep "rclone" > /dev/null
@@ -9,20 +12,11 @@ then
     exit
 fi
 
-
 # Setting this, so the repo does not need to be given on the commandline.
 export BORG_REPO="/mnt/w/Backups"
 
-#This is the location you want Rclone to send the BORG_REPO to
-#export CLOUDDEST="gdrive:/Backups"
-
 # Setting this, so you won't be asked for your repository passphrase.
 export BORG_PASSPHRASE=$(<~/.borg_pass)
-
-# Some helpers and error handling:
-info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
-trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
-
 
 info "Starting backup..."
 
@@ -51,7 +45,6 @@ borg create                                      \
 
 backup_exit=$?
 
-
 info "Pruning repository..."
 
 # Use the `prune` subcommand to maintain d daily, w weekly and m monthly
@@ -70,18 +63,15 @@ borg prune                  \
 
 prune_exit=$?
 
-
 # Use highest exit code as global exit code.
 global_exit=$(( backup_exit > prune_exit ? backup_exit : prune_exit ))
 
 # Execute rclone if no errors.
-#if [ ${global_exit} -eq 0 ];
-#then
-#    info "Rclone Borg sync has started..."
-#    rclone sync $BORG_REPO $CLOUDDEST -P --stats 1s -v
-#    info "Rclone Borg sync completed."
-#else
-#    info "Backup, Prune and/or Compact finished with an error."
-#fi
+if [ ${global_exit} -eq 0 ];
+then
+    info "Backup, Prune and/or Compact finished sucessfully."
+else
+    info "Backup, Prune and/or Compact finished with an error."
+fi
 
 exit ${global_exit}

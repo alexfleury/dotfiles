@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Some helpers and error handling:
+# Some helpers and error handling.
 info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
 trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
 
@@ -69,7 +69,6 @@ borg prune                  \
     --keep-monthly  6
 
 prune_exit=$?
-
 
 # Use highest exit code as global exit code.
 global_exit=$(( backup_exit > prune_exit ? backup_exit : prune_exit ))
