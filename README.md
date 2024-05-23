@@ -6,7 +6,7 @@
 Use with [GNU Stow](https://www.gnu.org/software/stow/) as a symlink farm manager.
 
 ```shell
-stow src/dir1 src/dir2 ...
+stow --verbose --dotfiles --target=$HOME --restow  src/dir1 src/dir2 ...
 ```
 
 ## Backup scripts
