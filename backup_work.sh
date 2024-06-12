@@ -46,6 +46,7 @@ borg create                     \
     --compression lzma,9        \
     --exclude-caches            \
     --exclude "*/.DS_Store"     \
+    --exclude "*/*.h5"          \
                                 \
     ::'{hostname}-{now}'        \
     $HOME/Work                  \
