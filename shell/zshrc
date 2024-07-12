@@ -16,6 +16,9 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# fzf (command-line fuzzy finder).
+source <(fzf --zsh)
+
 # Custom scripts.
 export PATH="$HOME/.dotfiles/bin:$PATH"
 

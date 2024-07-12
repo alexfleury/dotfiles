@@ -1,4 +1,4 @@
-# Brew packages to install on a personal macOS computer.
+# Brew packages to install on a work macOS computer.
 
 - defaults:
     - brew:
@@ -11,26 +11,13 @@
     - homebrew/bundle
     - osx-cross/arm
     - osx-cross/avr
-    - qmk/qmk
 
 - brew:
     - pyenv
     - pyenv-virtualenv
-    - yt-dlp
-    - qmk/qmk/qmk
 
 - cask:
-    - caffeine
-    - discord
-    - firefox
     - fzf
     - iterm2
     - libreoffice
-    - proton-drive
-    - proton-mail
-    - proton-pass
-    - protonvpn
     - rectangle
-    - steam
-    - vlc
-    - vscodium

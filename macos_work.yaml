@@ -8,6 +8,11 @@
 
 - clean: ["~", "~/.config"]
 
+# Saving important regular files (content may be moved to the "_local" file).
+- shell:
+    - test -h ~/.gitconfig || mv ~/.gitconfig ~./.gitconfig_backup 2>/dev/null
+    - test -h ~/.zshrc || mv ~/.zshrc ~./zshrc_backup 2>/dev/null
+
 - link:
     ~/.condarc: tools/condarc
     ~/.dotfiles: ""
