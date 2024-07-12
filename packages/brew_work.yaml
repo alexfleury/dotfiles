@@ -1,0 +1,23 @@
+# Brew packages to install on a work macOS computer.
+
+- defaults:
+    - brew:
+        - stderr: False
+        - stdout: False
+
+- install-brew: true
+
+- tap:
+    - homebrew/bundle
+    - osx-cross/arm
+    - osx-cross/avr
+
+- brew:
+    - pyenv
+    - pyenv-virtualenv
+
+- cask:
+    - fzf
+    - iterm2
+    - libreoffice
+    - rectangle

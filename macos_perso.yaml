@@ -1,0 +1,20 @@
+# Macos (personal) config file.
+
+- defaults:
+    link:
+        create: true
+        relink: true
+        force: true
+
+- clean: ["~", "~/.config"]
+
+# Saving important regular files (content may be moved to the "_local" file).
+- shell:
+    - "[ ! -f ~/.gitconfig ] || test -h ~/.gitconfig || mv ~/.gitconfig ~/.gitconfig_backup"
+    - "[ ! -f ~/.zshrc ] || test -h ~/.zshrc || mv ~/.bashrc ~/.zshrc_backup"
+
+- link:
+    ~/.dotfiles: ""
+    ~/.gitconfig: tools/gitconfig
+    ~/.gitignore_global: tools/gitignore_global
+    ~/.zshrc: shell/zshrc
