@@ -10,6 +10,9 @@ shopt -s checkwinsize
 # Enable history appending instead of overwriting.
 shopt -s histappend
 
+# Custom scripts.
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
 # Per-machine configuration.
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
