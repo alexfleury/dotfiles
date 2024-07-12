@@ -17,3 +17,4 @@ for section in conf:
             if os.path.islink(realpath):
                 print("Removing ", realpath)
                 os.unlink(realpath)
+                
