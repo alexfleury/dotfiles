@@ -4,18 +4,27 @@ set -e
 
 DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
+DOTBOT_PLUGINS="dotbot_plugins"
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_SUFFIX=".yaml"
 
 # Parse command line options.
 DOTBOTOPTS=""
-while getopts "Qqvd:p:" opt; do
+while getopts "Qqvhd:p:" opt; do
     case $opt in
+    h)
+        "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" --help
+        exit 1
+        ;;
     Q|q|v)
         DOTBOTOPTS="$DOTBOTOPTS -$opt"
         ;;
-    d|p)
+    d)
         DOTBOTOPTS="$DOTBOTOPTS -$opt $OPTARG"
+        ;;
+    p)
+        git submodule update --init --recursive "${OPTARG}"
+        DOTBOTOPTS="$DOTBOTOPTS --plugin-dir $OPTARG"
         ;;
     ?)
         exit 1
