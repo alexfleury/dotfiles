@@ -1,0 +1,14 @@
+# Ubuntu config file.
+
+- defaults:
+  link:
+    relink: true
+
+- clean: ["~"", "~/.config"]
+
+- link:
+  ~/.bashrc: shell/bashrc
+  ~/.dotfiles: ""
+  ~/.gitconfig: tools/gitconfig
+  ~/.gitignore_global: tools/gitignore_global
+
