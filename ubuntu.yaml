@@ -1,14 +1,16 @@
 # Ubuntu config file.
 
 - defaults:
-  link:
-    relink: true
+    link:
+        create: true
+        relink: true
+        force: true
 
-- clean: ["~"", "~/.config"]
+- clean: ["~", "~/.config"]
 
 - link:
-  ~/.bashrc: shell/bashrc
-  ~/.dotfiles: ""
-  ~/.gitconfig: tools/gitconfig
-  ~/.gitignore_global: tools/gitignore_global
+    ~/.bashrc: shell/bashrc
+    ~/.dotfiles: ""
+    ~/.gitconfig: tools/gitconfig
+    ~/.gitignore_global: tools/gitignore_global
 

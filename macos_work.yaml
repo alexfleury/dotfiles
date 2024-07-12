@@ -1,16 +1,18 @@
 # Macos (work) config file.
 
 - defaults:
-  link:
-    relink: true
+    link:
+        create: true
+        relink: true
+        force: true
 
-- clean: ["~"", "~/.config"]
+- clean: ["~", "~/.config"]
 
 - link:
-  ~/.condarc: tools/condarc
-  ~/.dotfiles: ""
-  ~/.gitconfig: tools/gitconfig
-  ~/.gitignore_global: tools/gitignore_global
-  ~/.vmdrc: tools/vmdrc
-  ~/.zshrc: shell/zshrc
-  ~/.zshrc_local: shell/zshrc_work
+    ~/.condarc: tools/condarc
+    ~/.dotfiles: ""
+    ~/.gitconfig: tools/gitconfig
+    ~/.gitignore_global: tools/gitignore_global
+    ~/.vmdrc: tools/vmdrc
+    ~/.zshrc: shell/zshrc
+    ~/.zshrc_local: shell/zshrc_work
