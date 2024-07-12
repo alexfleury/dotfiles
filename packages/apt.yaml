@@ -1,4 +1,4 @@
 # List of packages to install with the aptitude package manager.
 
 - apt:
-    rolldice
+    - rolldice
