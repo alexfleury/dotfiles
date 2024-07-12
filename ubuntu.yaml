@@ -10,8 +10,8 @@
 
 # Saving important regular files (content may be moved to the "_local" file).
 - shell:
-    - test -h ~/.bashrc || mv ~/.bashrc ~./bashrc_backup 2>/dev/null
-    - test -h ~/.gitconfig || mv ~/.gitconfig ~./.gitconfig_backup 2>/dev/null
+    - "[ ! -f ~/.bashrc ] || test -h ~/.bashrc || mv ~/.bashrc ~/.bashrc_backup"
+    - "[ ! -f ~/.gitconfig ] || test -h ~/.gitconfig || mv ~/.gitconfig ~/.gitconfig_backup"
 
 - link:
     ~/.bashrc: shell/bashrc
