@@ -29,7 +29,7 @@ while (( $((OPTIND--)) > 1 )); do
 done
 
 cd "${BASEDIR}"
-#git submodule update --init --recursive "${DOTBOT_DIR}"
+git submodule update --init --recursive "${DOTBOT_DIR}"
 
 for conf in ${@}; do
     cmd=("${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" ${DOTBOTOPTS} -c "${conf%"-sudo"}${CONFIG_SUFFIX}")
@@ -38,5 +38,5 @@ for conf in ${@}; do
         cmd=(sudo "${cmd[@]}")
     fi
 
-    echo "${cmd[@]}"
+    "${cmd[@]}"
 done
