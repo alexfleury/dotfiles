@@ -18,6 +18,7 @@
     ~/.dotfiles: ""
     ~/.gitconfig: tools/gitconfig
     ~/.gitignore_global: tools/gitignore_global
+    ~/.matplotlib/matplotlibrc: tools/matplotlibrc
     ~/.vmdrc: tools/vmdrc
     ~/.zshrc: shell/zshrc
     ~/.zshrc_local: shell/zshrc_work

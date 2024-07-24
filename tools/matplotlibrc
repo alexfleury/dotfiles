@@ -1,0 +1,23 @@
+axes.facecolor: "#060203" # Almost black
+axes.grid.which : "both"
+axes.labelsize: 12
+errorbar.capsize: 2
+figure.autolayout: true
+figure.facecolor: "#060203" # Almost black
+font.family: serif
+font.monospace: []
+font.serif: "Times"
+font.sans-serif: "Helvetica"
+font.size: 12
+legend.fontsize: 10
+lines.linewidth: 2
+xtick.labelsize: 10
+xtick.top: true
+xtick.bottom: true
+xtick.direction: "in"
+ytick.labelsize: 10
+ytick.left: true
+ytick.right: true
+ytick.direction: "in"
+text.usetex: true
+text.latex.preamble: "\usepackage[version=4]{mhchem}"
