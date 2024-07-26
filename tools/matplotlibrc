@@ -1,0 +1,38 @@
+axes.facecolor: "#060203" # Almost black
+axes.edgecolor: "white"
+axes.grid.which : "both"
+axes.labelcolor: "white"
+axes.labelsize: 12
+axes.prop_cycle: cycler("color", ["8dd3c7", "feffb3", "bfbbd9", "fa8174", "81b1d2", "fdb462", "b3de69", "bc82bd", "ccebc4", "ffed6f"])
+boxplot.boxprops.color: "white"
+boxplot.capprops.color: "white"
+boxplot.flierprops.color: "white"
+boxplot.flierprops.markeredgecolor: "white"
+boxplot.whiskerprops.color: "white"
+errorbar.capsize: 2
+figure.autolayout: true
+figure.edgecolor: "#060203" # Almost black
+figure.facecolor: "#060203" # Almost black
+font.family: serif
+font.monospace: []
+font.serif: "Times"
+font.sans-serif: "Helvetica"
+font.size: 12
+grid.color: white
+legend.fontsize: 10
+lines.color: "white"
+lines.linewidth: 2
+patch.edgecolor: "white"
+text.color: "white"
+text.usetex: true
+text.latex.preamble: "\usepackage[version=4]{mhchem}"
+xtick.labelsize: 10
+xtick.bottom: true
+xtick.color: "white"
+xtick.direction: "in"
+xtick.top: true
+ytick.color: "white"
+ytick.direction: "in"
+ytick.labelsize: 10
+ytick.left: true
+ytick.right: true
