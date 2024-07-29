@@ -1,0 +1,12 @@
+# Yay packages to install on a personal Arch Linux computer.
+
+- pacman:
+    - openrgb
+    - zsh
+
+- yay:
+    - vscodium
+
+- shell:
+    - "chsh -s $(which zsh)"
+    - 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'

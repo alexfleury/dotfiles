@@ -8,3 +8,6 @@
 [submodule "dotbot_plugins/dotbot-brew"]
 	path = dotbot_plugins/dotbot-brew
 	url = https://github.com/wren/dotbot-brew.git
+[submodule "dotbot_plugins/dotbot-yay"]
+	path = dotbot_plugins/dotbot-yay
+	url = https://github.com/alexwh/dotbot-yay
