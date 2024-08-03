@@ -11,7 +11,7 @@
 # Saving important regular files (content may be moved to the "_local" file).
 - shell:
     - "[ ! -f ~/.gitconfig ] || test -h ~/.gitconfig || mv ~/.gitconfig ~/.gitconfig_backup"
-    - "[ ! -f ~/.zshrc ] || test -h ~/.zshrc || mv ~/.bashrc ~/.zshrc_backup"
+    - "[ ! -f ~/.zshrc ] || test -h ~/.zshrc || mv ~/.zshrc ~/.zshrc_backup"
 
 - link:
     ~/.condarc: tools/condarc
