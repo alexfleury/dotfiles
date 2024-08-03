@@ -1,4 +1,4 @@
-# Macos (work) config file.
+# Arch linux config file.
 
 - defaults:
     link:
@@ -14,11 +14,7 @@
     - "[ ! -f ~/.zshrc ] || test -h ~/.zshrc || mv ~/.zshrc ~/.zshrc_backup"
 
 - link:
-    ~/.condarc: tools/condarc
     ~/.dotfiles: ""
     ~/.gitconfig: tools/gitconfig
     ~/.gitignore_global: tools/gitignore_global
-    ~/.matplotlib/matplotlibrc: tools/matplotlibrc
-    ~/.vmdrc: tools/vmdrc
     ~/.zshrc: shell/zshrc
-    ~/.zshrc_local: shell/zshrc_work
