@@ -1,3 +1,6 @@
+Host *
+    IgnoreUnknown UseKeychain
+
 Host github.com
     IgnoreUnknown UseKeychain
     AddKeysToAgent yes
