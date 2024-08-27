@@ -85,4 +85,3 @@ if [ -f ~/.zshrc_local ]; then
 fi
 
 eval "$(zoxide init zsh)"
-

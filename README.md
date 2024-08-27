@@ -23,3 +23,11 @@ The `-sudo` suffix can be used to execute a config needing elevated privileges.
 
 Backup scripts are tracked in the `bin` folder, and they required [BorgBackup](https://borgbackup.readthedocs.io/) and [Rclone](https://rclone.org/).
 After the backup process, the repository is sync with a cloud storage solution.
+
+## Dependencies for the ZSH shell
+
+- bat
+- fastfetch
+- fzf
+- oh-my-zsh
+- zoxide
