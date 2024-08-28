@@ -29,6 +29,7 @@ After the backup process, the repository is sync with a cloud storage solution.
 - bat
 - fastfetch
 - fzf
+- neovim
 - oh-my-zsh
 - ttf-fira-code
 - ttf-fira-mono
