@@ -1,6 +1,6 @@
 
 # Print system information.
-if [ -f /usr/bin/fastfetch ]; then
+if [[ -f /usr/bin/fastfetch || -f /opt/homebrew/bin/fastfetch ]]; then
 	fastfetch
 fi
 
