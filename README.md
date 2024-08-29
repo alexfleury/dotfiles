@@ -30,4 +30,6 @@ After the backup process, the repository is sync with a cloud storage solution.
 - fastfetch
 - fzf
 - oh-my-zsh
+- ttf-fira-code
+- ttf-fira-mono
 - zoxide
