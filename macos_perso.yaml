@@ -14,6 +14,7 @@
     - "[ ! -f ~/.zshrc ] || test -h ~/.zshrc || mv ~/.zshrc ~/.zshrc_backup"
 
 - link:
+    ~/.config/kitty: "config/kitty"
     ~/.dotfiles: ""
     ~/.gitconfig: tools/gitconfig
     ~/.gitignore_global: tools/gitignore_global
