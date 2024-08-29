@@ -1,5 +1,11 @@
-Host github.com
+Host *
     IgnoreUnknown UseKeychain
+
+Host github.com
     AddKeysToAgent yes
     UseKeychain yes
     IdentityFile ~/.ssh/github
+
+Host pihole
+    HostName 192.168.0.14
+    User alexandre
