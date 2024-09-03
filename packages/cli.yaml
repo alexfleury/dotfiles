@@ -1,0 +1,50 @@
+# Packages to install for the CLI environment.
+
+- ifmacos:
+    - install-brew: true
+
+    - brew:
+        - bat
+        - borgbackup
+        - fastfetch
+        - neovim
+        - pyenv
+        - pyenv-virtualenv
+        - wget
+        - yt-dlp
+        - zoxide
+
+    - cask:
+        - font-fira-code
+
+- ifdebian:
+    - sudo: 
+        - apt:
+            - bat
+            - fastfetch
+            - fonts-firacode
+            - kitty-terminfo
+            - neovim
+            - pyenv
+            - pyenv-virtualenv
+            - wget
+            - zsh
+            - zoxide
+
+- ifarch:
+    - sudo:
+        - pacman:
+            - bat
+            - borg
+            - fastfetch
+            - neovim
+            - pyenv
+            - pyenv-virtualenv
+            - ttf-fira-code
+            - wget
+            - yt-dlp
+            - zsh
+            - zoxide
+
+- shell:
+    - '[ -d ~/.oh-my-zsh ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
