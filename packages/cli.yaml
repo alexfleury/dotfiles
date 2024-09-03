@@ -5,7 +5,7 @@
 
     - install: [
         bat,
-        [fastfetch, ppa:zhangsongcui3371/fastfetch],
+        fastfetch,
         fzf,
         neovim,
         pyenv,
