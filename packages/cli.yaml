@@ -5,7 +5,8 @@
 
     - install: [
         bat,
-        fastfetch,
+        [fastfetch, ppa:zhangsongcui3371/fastfetch],
+        fzf,
         neovim,
         pyenv,
         pyenv-virtualenv,
@@ -17,3 +18,4 @@
 
 - shell:
     - '[ -d ~/.oh-my-zsh ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+    - "chsh -s $(which zsh) $USER"
