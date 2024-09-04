@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Some helpers and error handling.
 info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }

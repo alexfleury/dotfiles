@@ -6,25 +6,20 @@ DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 DOTBOT_PLUGINS="dotbot_plugins"
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG_SUFFIX=".yaml"
 
 # Parse command line options.
-DOTBOTOPTS=""
-while getopts "Qqvhd:p:" opt; do
+DOTBOT_OPTS=""
+while getopts "Qqvhd:" opt; do
     case $opt in
     h)
         "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" --help
         exit 1
         ;;
     Q|q|v)
-        DOTBOTOPTS="$DOTBOTOPTS -$opt"
+        DOTBOT_OPTS="$DOTBOT_OPTS -$opt"
         ;;
     d)
-        DOTBOTOPTS="$DOTBOTOPTS -$opt $OPTARG"
-        ;;
-    p)
-        git submodule update --init --recursive "${OPTARG}"
-        DOTBOTOPTS="$DOTBOTOPTS --plugin-dir $OPTARG"
+        DOTBOT_OPTS="$DOTBOT_OPTS -$opt $OPTARG"
         ;;
     ?)
         exit 1
@@ -38,14 +33,11 @@ while (( $((OPTIND--)) > 1 )); do
 done
 
 cd "${BASEDIR}"
-git submodule update --init --recursive "${DOTBOT_DIR}"
+
+# Initialize dotbot, and all dotbot plugins.
+git submodule update --init --recursive
+DOTBOT_PLUGINS_OPTS="-p ${DOTBOT_PLUGINS}/dotbot-omnipkg/omnipkg.py"
 
 for conf in ${@}; do
-    cmd=("${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" ${DOTBOTOPTS} -c "${conf%"-sudo"}${CONFIG_SUFFIX}")
-
-    if [[ $conf == *"sudo"* ]]; then
-        cmd=(sudo "${cmd[@]}")
-    fi
-
-    "${cmd[@]}"
+    "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" ${DOTBOT_PLUGINS_OPTS} ${DOTBOT_OPTS} -c "${conf}"
 done
