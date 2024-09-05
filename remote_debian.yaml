@@ -11,14 +11,10 @@
 # Saving important regular files (content may be moved to the "_local" file).
 - shell:
     - "[ ! -f ~/.gitconfig ] || test -h ~/.gitconfig || mv ~/.gitconfig ~/.gitconfig_backup"
-    - "[ ! -f ~/.zshrc ] || test -h ~/.zshrc || mv ~/.zshrc ~/.zshrc_backup"
-    - '[ -d ~/.oh-my-zsh ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
-    - "sudo chsh -s $(which zsh) $(whoami)"
+    - "[ ! -f ~/.bashrc ] || test -h ~/.bashrc || mv ~/.bashrc ~/.bashrc_backup"
 
 - link:
-    ~/.config/kitty: "config/kitty"
+    ~/.zshrc: shell/bashrc
     ~/.dotfiles: ""
     ~/.gitconfig: tools/gitconfig
     ~/.gitignore_global: tools/gitignore_global
-    ~/.ssh/config: config/ssh_config
-    ~/.zshrc: shell/zshrc
