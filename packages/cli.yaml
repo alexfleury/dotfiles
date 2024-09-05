@@ -8,11 +8,8 @@
         fastfetch,
         fzf,
         neovim,
-        pyenv,
-        pyenv-virtualenv,
         wget,
         zoxide,
-        [ttf-fira-code, fonts-firacode, font-fira-code],
-        {linux: zsh}
+        {linux: zsh, require_gui: true}
     ]
 

@@ -1,5 +1,8 @@
-
 # Local configuration for a work ZSH environement.
+
+# Homebrew.
+export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:$PATH"
 
 # Python interpreter for Google Cloud SDK.
 export CLOUDSDK_PYTHON=$HOME/.pyenv/versions/gcloud/bin/python

@@ -1,0 +1,14 @@
+# BASH/ZSH Common aliases and functions.
+source $HOME/.dotfiles/shell/common
+source $HOME/.dotfiles/shell/functions
+
+# Per-machine configuration.
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
+fi
+
+# fzf: https://github.com/junegunn/fzf.
+eval "$(fzf --bash)"
+
+# zoxide: https://github.com/ajeetdsouza/zoxide.
+eval "$(zoxide init bash)"

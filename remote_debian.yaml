@@ -14,7 +14,7 @@
     - "[ ! -f ~/.bashrc ] || test -h ~/.bashrc || mv ~/.bashrc ~/.bashrc_backup"
 
 - link:
-    ~/.zshrc: shell/bashrc
+    ~/.bashrc: shell/bashrc
     ~/.dotfiles: ""
     ~/.gitconfig: tools/gitconfig
     ~/.gitignore_global: tools/gitignore_global
