@@ -25,6 +25,9 @@ eval "$(pyenv virtualenv-init -)"
 # fzf (command-line fuzzy finder).
 source <(fzf --zsh)
 
+# Aliases for sudo.
+alias sudo="sudo "
+
 # Custom scripts.
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
