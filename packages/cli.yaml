@@ -8,14 +8,8 @@
         fastfetch,
         fzf,
         neovim,
-        pyenv,
-        pyenv-virtualenv,
         wget,
         zoxide,
-        [ttf-fira-code, fonts-firacode, font-fira-code],
-        {linux: zsh}
+        {linux: zsh, require_gui: true}
     ]
 
-- shell:
-    - '[ -d ~/.oh-my-zsh ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
-    - "sudo chsh -s $(which zsh) $(whoami)"

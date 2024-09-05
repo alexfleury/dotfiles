@@ -1,0 +1,17 @@
+# Shell useful aliases.
+
+# Custom scripts.
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
+# Aliases for sudo.
+alias sudo="sudo "
+
+# Default editor.
+export EDITOR=nvim
+export VISUAL=nvim
+alias vim="nvim"
+
+# Change directory aliases.
+alias cd..="cd .."
+alias ..="cd .."
+
