@@ -24,8 +24,8 @@ extract() {
 	done
 }
 
-# Automatically do an ls after each cd, z, or zoxide.
-cd ()
+# Automatically do an ls after each cd.
+cdls ()
 {
 	if [ -n "$1" ]; then
 		builtin cd "$@" && ls
