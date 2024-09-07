@@ -13,12 +13,13 @@
     - "[ ! -f ~/.gitconfig ] || test -h ~/.gitconfig || mv ~/.gitconfig ~/.gitconfig_backup"
     - "[ ! -f ~/.zshrc ] || test -h ~/.zshrc || mv ~/.zshrc ~/.zshrc_backup"
     - '[ -d ~/.oh-my-zsh ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
-    - "sudo chsh -s $(which zsh) $(whoami)"
+    #- "sudo chsh -s $(which zsh) $(whoami)"
 
 - link:
+    ~/.config/fastfetch: "config/fastfetch"
     ~/.config/kitty: "config/kitty"
     ~/.dotfiles: ""
-    ~/.gitconfig: tools/gitconfig
-    ~/.gitignore_global: tools/gitignore_global
-    ~/.ssh/config: config/ssh_config
-    ~/.zshrc: shell/zshrc
+    ~/.gitconfig: "tools/gitconfig"
+    ~/.gitignore_global: "tools/gitignore_global"
+    ~/.ssh/config: "config/ssh_config"
+    ~/.zshrc: "shell/zshrc"
