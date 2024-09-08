@@ -14,7 +14,6 @@
     - "[ ! -f ~/.zshrc ] || test -h ~/.zshrc || mv ~/.zshrc ~/.zshrc_backup"
 
 - link:
-    ~/.config/fastfetch: "config/fastfetch"
     ~/.config/kitty: "config/kitty"
     ~/.dotfiles: ""
     ~/.gitconfig: "tools/gitconfig"
