@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "window.menuBarVisibility": "compact",
+    "workbench.colorTheme": "Nord",
+    "files.trimFinalNewlines": true,
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace",
+    "files.autoGuessEncoding": true
+}
