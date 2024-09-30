@@ -13,7 +13,7 @@ then
 fi
 
 # Setting this, so the repo does not need to be given on the commandline.
-export BORG_REPO="/mnt/w/Backups"
+export BORG_REPO="/run/media/alex/HDD_1TB/Backups"
 
 # Setting this, so you won"t be asked for your repository passphrase.
 export BORG_PASSPHRASE=$(<~/.borg_pass)
@@ -32,16 +32,14 @@ borg create                                      \
     --show-rc                                    \
     --compression lz4                            \
     --exclude-caches                             \
-    --exclude "/mnt/d/SteamLibrary"              \
-    --exclude "/mnt/d/Series/mp4"                \
-    --exclude "/mnt/d/Films/mp4"                 \
-    --exclude "/mnt/d/GDrive"                    \
-    --exclude "/mnt/d/PDrive"                    \
-    --exclude '/mnt/d/$RECYCLE.BIN'              \
-    --exclude "/mnt/d/System Volume Information" \
+    --exclude "/mnt/Data/SteamLibrary"           \
+    --exclude "/mnt/Data/Series/mp4"             \
+    --exclude "/mnt/Data/Films/mp4"              \
+    --exclude "/mnt/Data/Audio/Musique/MP3"      \
+    --exclude "/mnt/Data/CloudSync"              \
                                                  \
     ::"{hostname}-{now}"                         \
-    "/mnt/d"
+    "/mnt/Data"
 
 backup_exit=$?
 
@@ -52,13 +50,13 @@ info "Pruning repository..."
 # limit prune"s operation to this machine"s archives and not apply to
 # other machines" archives also:
 
-borg prune                  \
-    --list                  \
-    --prefix "{hostname}-"  \
-    --show-rc               \
-    --keep-daily    1       \
-    --keep-weekly   1       \
-    --keep-monthly  12      \
+borg prune                          \
+    --list                          \
+    --glob-archives "{hostname}-*"  \
+    --show-rc                       \
+    --keep-daily    1               \
+    --keep-weekly   1               \
+    --keep-monthly  12              \
     --keep-yearly   3
 
 prune_exit=$?

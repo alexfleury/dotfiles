@@ -43,12 +43,12 @@ info "Pruning repository..."
 
 borg prune                  \
     --list                  \
-    --prefix "grimdawn-"  \
+    --prefix "grimdawn-"    \
     --show-rc               \
-    --keep-daily    1       \
-    --keep-weekly   1       \
+    --keep-daily    7       \
+    --keep-weekly   4       \
     --keep-monthly  12      \
-    --keep-yearly   3
+    --keep-yearly   2
 
 prune_exit=$?
 
