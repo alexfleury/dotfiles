@@ -2,7 +2,7 @@
 
 # Some helpers and error handling.
 info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
-trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
+trap "echo $( date ) Backup interrupted >&2; exit 2" INT TERM
 
 # Destination repo can be "gdrive" (default) or "usb".
 DEST_REPO="${1:-"gdrive"}"
@@ -28,7 +28,7 @@ else
     exit
 fi
 
-# Setting this, so you won't be asked for your repository passphrase.
+# Setting this, so you won"t be asked for your repository passphrase.
 export BORG_PASSPHRASE=$(<~/.borg_pass)
 
 info "Starting backup..."
@@ -48,7 +48,7 @@ borg create                     \
     --exclude "*/.DS_Store"     \
     --exclude "*/*.h5"          \
                                 \
-    ::'{hostname}-{now}'        \
+    ::"{hostname}-{now}"        \
     $HOME/Work                  \
     $HOME/Zotero
 
@@ -57,13 +57,13 @@ backup_exit=$?
 info "Pruning repository..."
 
 # Use the `prune` subcommand to maintain d daily, w weekly and m monthly
-# archives of THIS machine. The '{hostname}-' prefix is very important to
-# limit prune's operation to this machine's archives and not apply to
-# other machines' archives also:
+# archives of THIS machine. The "{hostname}-" prefix is very important to
+# limit prune"s operation to this machine"s archives and not apply to
+# other machines" archives also:
 
 borg prune                  \
     --list                  \
-    --prefix '{hostname}-'  \
+    --prefix "{hostname}-"  \
     --show-rc               \
     --keep-daily    7       \
     --keep-weekly   4       \

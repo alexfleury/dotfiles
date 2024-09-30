@@ -13,10 +13,7 @@ then
 fi
 
 # Setting this, so the repo does not need to be given on the commandline.
-export BORG_REPO="/run/media/alex/HDD_1TB/Backups"
-
-# Setting this, so you won"t be asked for your repository passphrase.
-export BORG_PASSPHRASE=$(<~/.borg_pass)
+export BORG_REPO="/mnt/Data/CloudSync/proton/GDSaves"
 
 info "Starting backup..."
 
@@ -32,32 +29,26 @@ borg create                                      \
     --show-rc                                    \
     --compression lz4                            \
     --exclude-caches                             \
-    --exclude "/mnt/Data/SteamLibrary"           \
-    --exclude "/mnt/Data/Series/mp4"             \
-    --exclude "/mnt/Data/Films/mp4"              \
-    --exclude "/mnt/Data/Audio/Musique/MP3"      \
-    --exclude "/mnt/Data/CloudSync"              \
                                                  \
-    ::"{hostname}-{now}"                         \
-    "/mnt/Data"
+    ::"grimdawn-{now}"                           \
+    "/home/alex/.local/share/Steam/steamapps/compatdata/219990/pfx/drive_c/users/steamuser/Documents/My Games/Grim Dawn/save" \
+    "/home/alex/GDStash"
 
 backup_exit=$?
 
 info "Pruning repository..."
 
 # Use the `prune` subcommand to maintain d daily, w weekly and m monthly
-# archives of THIS machine. The "{hostname}-" prefix is very important to
-# limit prune"s operation to this machine"s archives and not apply to
-# other machines" archives also:
+# archives of THIS machine.
 
-borg prune                          \
-    --list                          \
-    --glob-archives "{hostname}-*"  \
-    --show-rc                       \
-    --keep-daily    1               \
-    --keep-weekly   1               \
-    --keep-monthly  12              \
-    --keep-yearly   3
+borg prune                  \
+    --list                  \
+    --prefix "grimdawn-"    \
+    --show-rc               \
+    --keep-daily    7       \
+    --keep-weekly   4       \
+    --keep-monthly  12      \
+    --keep-yearly   2
 
 prune_exit=$?
 
