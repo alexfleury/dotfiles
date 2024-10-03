@@ -19,7 +19,7 @@
     ~/.dotfiles: ""
     ~/.gitconfig: "tools/gitconfig"
     ~/.gitignore_global: "tools/gitignore_global"
-    ~/.matplotlib/matplotlibrc: "tools/matplotlibrc"
+    ~/.matplotlib/matplotlibrc: "tools/matplotlibrc_dark"
     ~/.ssh/config: "config/ssh_config"
     ~/.vmdrc: "tools/vmdrc"
     ~/.zshrc: "shell/zshrc"
