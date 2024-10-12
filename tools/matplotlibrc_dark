@@ -36,3 +36,4 @@ ytick.direction: "in"
 ytick.labelsize: 10
 ytick.left: true
 ytick.right: true
+
