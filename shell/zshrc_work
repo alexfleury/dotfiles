@@ -25,3 +25,5 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+alias bench="PYENV_VERSION=gcloud bench"
