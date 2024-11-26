@@ -7,11 +7,5 @@ if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
 
-# Terminal information.
-export TERMINFO=/usr/share/terminfo
-
-# fzf: https://github.com/junegunn/fzf.
-#eval "$(fzf --bash)"
-
 # zoxide: https://github.com/ajeetdsouza/zoxide.
 eval "$(zoxide init bash)"

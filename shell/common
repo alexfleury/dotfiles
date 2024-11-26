@@ -7,9 +7,7 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 alias sudo="sudo "
 
 # Default editor.
-export EDITOR=nvim
-export VISUAL=nvim
-alias vim="nvim"
+export EDITOR=vim
 
 # Change directory aliases.
 alias cd..="cd .."
