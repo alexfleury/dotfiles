@@ -27,3 +27,6 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 
 alias bench="PYENV_VERSION=gcloud bench"
+
+# Created by `pipx` on 2024-11-20 18:29:35
+export PATH="$PATH:/Users/alexandre.fleury/.local/bin"
