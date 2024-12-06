@@ -1,3 +1,5 @@
+Include config_*
+
 Host *
     IgnoreUnknown UseKeychain
 

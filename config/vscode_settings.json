@@ -1,0 +1,27 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "editor.minimap.enabled": false,
+    "python.analysis.extraPaths": [
+        "/Users/alexandre.fleury/Repos/Tangelo"
+    ],
+    "editor.rulers": [
+        79
+    ],
+    "extensions.ignoreRecommendations": true,
+    "python.terminal.activateEnvironment": false,
+    "git.openRepositoryInParentFolders": "never",
+    "python.venvFolders": [
+        "/Users/alexandre.fleury/micromamba/envs/"
+    ],
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "python.createEnvironment.trigger": "off",
+    "workbench.colorTheme": "Nord",
+    "remote.SSH.serverInstallPath": {
+        "bench-forwarded": "/scratch"
+    },
+    "remote.SSH.remoteServerListenOnSocket": true,
+    "remote.SSH.remotePlatform": {
+        "bench-forwarded": "linux"
+    }
+}
