@@ -28,9 +28,6 @@ else
     exit
 fi
 
-# Setting this, so you won"t be asked for your repository passphrase.
-export BORG_PASSPHRASE=$(<~/.borg_pass)
-
 info "Starting backup..."
 
 # Backup the most important directories into an archive named after
