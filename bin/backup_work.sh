@@ -15,6 +15,9 @@ then
     exit
 fi
 
+# Read borg passphrase.
+export BORG_PASSPHRASE=$(op read op://Employee/BorgBackup/password)
+
 # Setting this, so the repo does not need to be given on the commandline.
 if [[ $DEST_REPO = "gdrive" ]]; then
     export BORG_REPO="$HOME/Backups"
@@ -70,6 +73,7 @@ prune_exit=$?
 
 # Use highest exit code as global exit code.
 global_exit=$(( backup_exit > prune_exit ? backup_exit : prune_exit ))
+unset BORG_PASSPHRASE
 
 # Execute rclone if no errors and the "gdrive" destination is selected.
 if [[ ( $DEST_REPO = "gdrive" ) && ( ${global_exit} -eq 0 ) ]]; then
