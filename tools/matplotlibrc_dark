@@ -1,9 +1,9 @@
-axes.facecolor: "#060203" # Almost black
+axes.facecolor: "#050103" # Almost black
 axes.edgecolor: "white"
 axes.grid.which : "both"
 axes.labelcolor: "white"
 axes.labelsize: 12
-axes.prop_cycle: cycler("color", ["8dd3c7", "feffb3", "bfbbd9", "fa8174", "81b1d2", "fdb462", "b3de69", "bc82bd", "ccebc4", "ffed6f"])
+axes.prop_cycle: cycler("color", ["e2a828", "d9663a", "29a1bc", "5e9d6f", "ffffff", "d9d9d9"])
 boxplot.boxprops.color: "white"
 boxplot.capprops.color: "white"
 boxplot.flierprops.color: "white"
@@ -11,8 +11,8 @@ boxplot.flierprops.markeredgecolor: "white"
 boxplot.whiskerprops.color: "white"
 errorbar.capsize: 2
 figure.autolayout: true
-figure.edgecolor: "#060203" # Almost black
-figure.facecolor: "#060203" # Almost black
+figure.edgecolor: "#050103" # Almost black
+figure.facecolor: "#050103" # Almost black
 font.family: serif
 font.monospace: []
 font.serif: "Times"
