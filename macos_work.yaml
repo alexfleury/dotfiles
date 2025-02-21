@@ -23,6 +23,7 @@
     ~/.ssh/config: "config/ssh_config"
     ~/.ssh/config_work: "config/ssh_config_work"
     ~/.vmdrc: "tools/vmdrc"
+    ~/.zprofile: "shell/zprofile"
     ~/.zshrc: "shell/zshrc"
     ~/.zshrc_local: "shell/zshrc_work"
     "~/Library/Application Support/Code/User/settings.json": "config/vscode_settings.json"
