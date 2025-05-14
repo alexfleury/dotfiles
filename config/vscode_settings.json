@@ -16,12 +16,19 @@
     "editor.formatOnSave": true,
     "files.insertFinalNewline": true,
     "python.createEnvironment.trigger": "off",
-    "workbench.colorTheme": "Nord",
+    "workbench.colorTheme": "Dracula Theme",
     "remote.SSH.serverInstallPath": {
         "bench-forwarded": "/scratch"
     },
     "remote.SSH.remoteServerListenOnSocket": true,
     "remote.SSH.remotePlatform": {
         "bench-forwarded": "linux"
+    },
+    "workbench.iconTheme": "vs-minimal",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
     }
 }
