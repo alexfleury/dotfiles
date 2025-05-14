@@ -24,5 +24,11 @@
     "remote.SSH.remotePlatform": {
         "bench-forwarded": "linux"
     },
-    "workbench.iconTheme": "vs-minimal"
+    "workbench.iconTheme": "vs-minimal",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    }
 }
