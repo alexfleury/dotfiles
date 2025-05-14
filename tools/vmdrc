@@ -12,9 +12,9 @@ color Type O red
 color change rgb 2 0.556 0.556 0.556;
 color change rgb 0 0.098 0.098 0.898;
 color change rgb 1 0.989 0.0 0.0;
+color change rgb 16 0.0196078431372549 0.00392156862745098 0.011764705882352941;
 
-color Display Background white
-color Display FPS black
+color Display Background black
 
 axes location off
 
