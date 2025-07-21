@@ -30,5 +30,7 @@
         "plaintext": false,
         "markdown": false,
         "scminput": false
-    }
+    },
+    "editor.renderWhitespace": "all",
+    "github.copilot.nextEditSuggestions.enabled": true
 }
