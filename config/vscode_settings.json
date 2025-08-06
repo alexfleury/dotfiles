@@ -9,7 +9,6 @@
     ],
     "extensions.ignoreRecommendations": true,
     "python.terminal.activateEnvironment": false,
-    "git.openRepositoryInParentFolders": "never",
     "python.venvFolders": [
         "/Users/alexandre.fleury/micromamba/envs/"
     ],
