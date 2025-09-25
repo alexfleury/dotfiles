@@ -19,3 +19,5 @@ __pycache__
 # VS Code workspace files.
 .vscode
 *.code-workspace
+
+packages

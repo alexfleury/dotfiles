@@ -7,8 +7,5 @@ if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
 
-# Needed for some functions (top, etc).
-export TERMINFO=/usr/share/terminfo
-
 # zoxide: https://github.com/ajeetdsouza/zoxide.
 eval "$(zoxide init bash)"
