@@ -20,4 +20,4 @@ __pycache__
 .vscode
 *.code-workspace
 
-packages
+*[jJ][uU][sS][tT][fF][iI][lL][eE]
