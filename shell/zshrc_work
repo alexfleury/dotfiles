@@ -13,4 +13,4 @@ alias bench="PYENV_VERSION=bench bench"
 alias note="code $HOME/Work/flowernotes/notes/random_notes.md"
 
 # Github access in bench.
-ssh-add --apple-use-keychain ~/.ssh/github
+ssh-add -l | grep -q `ssh-keygen -lf ~/.ssh/github  | awk '{print $2}'` || ssh-add --apple-use-keychain ~/.ssh/github
