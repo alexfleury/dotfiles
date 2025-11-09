@@ -31,5 +31,6 @@
         "scminput": false
     },
     "editor.renderWhitespace": "all",
-    "github.copilot.nextEditSuggestions.enabled": true
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "git.openRepositoryInParentFolders": "never"
 }
