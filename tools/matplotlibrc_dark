@@ -1,4 +1,4 @@
-axes.facecolor: "#050103" # Almost black
+axes.facecolor: "#030202" # Almost black
 axes.edgecolor: "white"
 axes.grid.which : "both"
 axes.labelcolor: "white"
@@ -11,8 +11,8 @@ boxplot.flierprops.markeredgecolor: "white"
 boxplot.whiskerprops.color: "white"
 errorbar.capsize: 2
 figure.autolayout: true
-figure.edgecolor: "#050103" # Almost black
-figure.facecolor: "#050103" # Almost black
+figure.edgecolor: "#030202" # Almost black
+figure.facecolor: "#030202" # Almost black
 font.family: serif
 font.monospace: []
 font.serif: "Times"
