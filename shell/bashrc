@@ -8,4 +8,6 @@ if [ -f ~/.bashrc_local ]; then
 fi
 
 # zoxide: https://github.com/ajeetdsouza/zoxide.
-eval "$(zoxide init bash)"
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init bash)"
+fi
