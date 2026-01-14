@@ -21,3 +21,5 @@ __pycache__
 *.code-workspace
 
 *[jJ][uU][sS][tT][fF][iI][lL][eE]
+
+**/packages/*
