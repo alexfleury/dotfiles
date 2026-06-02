@@ -34,10 +34,6 @@ done
 
 cd "${BASEDIR}"
 
-# Initialize dotbot, and all dotbot plugins.
-git submodule update --init --recursive
-DOTBOT_PLUGINS_OPTS="-p ${DOTBOT_PLUGINS}/dotbot-omnipkg/omnipkg.py"
-
 for conf in ${@}; do
-    "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" ${DOTBOT_PLUGINS_OPTS} ${DOTBOT_OPTS} -c "${conf}"
+    "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" ${DOTBOT_OPTS} -c "${conf}"
 done
