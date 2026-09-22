@@ -27,3 +27,4 @@
     ~/.zshrc: "shell/zshrc"
     ~/.zshrc_local: "shell/zshrc_work"
     "~/Library/Application Support/Code/User/settings.json": "config/vscode_settings.json"
+    ~/.pixi/config.toml: "tools/pixi_config.toml"

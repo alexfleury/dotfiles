@@ -1,4 +1,4 @@
-# Local configuration for a work ZSH environement.
+# Local configuration for a work ZSH environment.
 
 # Homebrew.
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
@@ -13,3 +13,17 @@ alias note="code $HOME/Work/flowernotes/notes/random_notes.md"
 
 # Github access in bench.
 ssh-add -l | grep -q `ssh-keygen -lf ~/.ssh/github  | awk '{print $2}'` || ssh-add --apple-use-keychain ~/.ssh/github
+
+# AWS CLI login
+alias awslogin='aws sso login --sso-session sandboxaq'
+
+# AWS Identity for session
+alias awsid="aws sts get-caller-identity"
+
+# AWS SSO creds
+awscreds() {
+  eval $(aws configure export-credentials --profile $1 --format env) || echo "Couldn't get short-term credentials for $1."
+}
+
+# AWS profiles listing
+alias awsprofiles="aws configure list-profiles | grep -v default"

@@ -12,13 +12,7 @@ An install script is written in a way to accept arguments, although the limited 
 
 Where `config_a.yaml` and `config_b.yaml` refers to different config files. 
 
-## Plugins
-
-`install.sh` takes care of installing and providing dotbot the submodule files.
-
-- [dotbot-omni-pkg](https://github.com/Code-Maniac/dotbot-omnipkg).
-
 ## Backup scripts
 
-Backup scripts are tracked in the `bin` folder, and they require [BorgBackup](https://borgbackup.readthedocs.io/) and [Rclone](https://rclone.org/).
-After the backup process, the repository can be synced with a cloud storage solution.
+Backup scripts are tracked in the `bin` folder, and they require [BorgBackup](https://borgbackup.readthedocs.io/) and the [Google Cloud CLI](https://cloud.google.com/sdk/gcloud).
+After the backup process, the repository is synced to a cloud storage bucket with `gcloud storage rsync`.
