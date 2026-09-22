@@ -8,7 +8,9 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:$PATH"
 # https://cloud.google.com/iap/docs/using-tcp-forwarding#increasing_the_tcp_upload_bandwidth
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
 
-alias bench="micromamba -n algenv run bench"
+# Pixi
+export PATH="$HOME/.pixi/bin:$PATH"
+
 alias note="code $HOME/Work/flowernotes/notes/random_notes.md"
 
 # Github access in bench.
