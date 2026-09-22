@@ -1,0 +1,6 @@
+default-channels = [
+  "gcs://sb-alg-nfs-shared-sync/shared/conda",
+  "conda-forge",
+  "bioconda",
+  "nvidia",
+]
