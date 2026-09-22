@@ -2,13 +2,17 @@
 
 from __future__ import print_function
 
+import sys
 import yaml
 import os
 
-CONFIG="config.yaml"
+if len(sys.argv) != 2:
+    sys.exit("Usage: {} <config.yaml>".format(sys.argv[0]))
 
-stream = open(CONFIG, "r")
-conf = yaml.load(stream)
+CONFIG = sys.argv[1]
+
+with open(CONFIG, "r") as stream:
+    conf = yaml.safe_load(stream)
 
 for section in conf:
     if "link" in section:

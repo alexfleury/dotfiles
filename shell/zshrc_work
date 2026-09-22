@@ -1,4 +1,4 @@
-# Local configuration for a work ZSH environement.
+# Local configuration for a work ZSH environment.
 
 # Homebrew.
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"

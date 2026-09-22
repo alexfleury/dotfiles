@@ -4,11 +4,10 @@
 info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
 trap "echo $( date ) Backup interrupted >&2; exit 2" INT TERM
 
-# Close if borg or rclone is running.
+# Close if borg is already running.
 if pgrep "borg" > /dev/null
 then
-    Info "Backup already running, exiting"
-    exit
+    info "Backup already running, exiting"
     exit
 fi
 
@@ -38,8 +37,8 @@ borg create                     \
     --exclude "*/*.h5"          \
                                 \
     ::"{hostname}-{now}"        \
-    $HOME/Work                  \
-    $HOME/Zotero
+    "$HOME/Work"                \
+    "$HOME/Zotero"
 
 backup_exit=$?
 
@@ -67,10 +66,8 @@ unset BORG_PASSPHRASE
 # Cloud sync.
 if [[ ( ${global_exit} -eq 0 ) ]]; then
     info "Bucket sync has started..."
-    gcloud storage rsync -r $BORG_REPO $CLOUD_DEST
+    gcloud storage rsync -r "$BORG_REPO" "$CLOUD_DEST"
     info "Bucket sync completed."
-elif [[ ${global_exit} -eq 0 ]]; then
-    info "Backup, Prune and/or Compact finished sucessfully without cloud synchronization."
 else
     info "Backup, Prune and/or Compact finished with an error."
 fi

@@ -4,7 +4,6 @@ set -e
 
 DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
-DOTBOT_PLUGINS="dotbot_plugins"
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Parse command line options.
@@ -32,8 +31,8 @@ while (( $((OPTIND--)) > 1 )); do
     shift
 done
 
-cd "${BASEDIR}"
+cd "${BASE_DIR}"
 
-for conf in ${@}; do
+for conf in "$@"; do
     "${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" ${DOTBOT_OPTS} -c "${conf}"
 done

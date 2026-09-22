@@ -1,0 +1,3 @@
+# Login-shell configuration (~/.zprofile), sourced once per login before ~/.zshrc.
+# Intentionally empty for now — add login-only setup (e.g. PATH exports for
+# non-interactive login shells) here.
